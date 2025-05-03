@@ -15,8 +15,8 @@ model = silentcipher.get_model(
 
 def main():
     
-    filename='sample/test.wav'
-    encoded_filename='sample/enc/test.wav'
+    filename='sample/wav/audio_mono_44k.wav'
+    encoded_filename='sample/enc/audio_mono_44k_enc.wav'
     
     
     result = model.decode(encoded_filename, phase_shift_decoding=False)

@@ -44,6 +44,14 @@ ffmpeg -i "input/video.mp4" -vn -c:a aac -b:a 128k -ac 1 -ar 44100 "aac/audio_mo
 
 # wav audio
 
+## 16bit audio
+
+```sh
+ffmpeg -i "input/video.mp4" -vn -c:a pcm_s16le -ac 1 -ar 44100 "wav/audio_mono_44k.wav"
+```
+
+## 32bit audio
+
 ```sh
 ffmpeg -i "input/video.mp4" -vn -c:a pcm_s32le -ac 2 -ar 44100 "wav/audio_32bit_st_44k.wav"
 ```
