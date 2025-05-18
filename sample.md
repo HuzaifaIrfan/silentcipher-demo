@@ -60,3 +60,17 @@ ffmpeg -i "input/video.mp4" -vn -c:a pcm_s32le -ac 2 -ar 44100 "wav/audio_32bit_
 ffmpeg -i "input/video.mp4" -vn -c:a pcm_s32le -ac 1 -ar 44100 "wav/audio_32bit_mono_44k.wav"
 ```
 
+
+# Segmentation
+
+```sh
+ffmpeg -i wav/audio_mono_44k.wav -f segment -segment_time 120 -c copy wav_2m/output_%03d.wav
+```
+
+```sh
+ffmpeg -i wav/audio_mono_44k.wav -f segment -segment_time 60 -c copy wav_m/output_%03d.wav
+```
+
+```sh
+ffmpeg -i wav/audio_mono_44k.wav -f segment -segment_time 30 -c copy wav_30s/output_%03d.wav
+```
